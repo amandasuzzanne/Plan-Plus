@@ -1,0 +1,15 @@
+{
+  "trips": [
+    {
+      "id": "1",
+      "destination": "Paris",
+      "arrivalDate": "2024-05-10",
+      "departureDate": "2024-05-15",
+      "days": 5,
+      "accommodation": "double",
+      "total": 65000,
+      "poster": "./assets/images/paris.jpeg",
+      "description": "A beautiful hotel in Paris."
+    }
+  ]
+}
