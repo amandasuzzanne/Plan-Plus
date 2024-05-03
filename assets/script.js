@@ -1,96 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const destinationsList = document.getElementById('destinations');
     const tripForm = document.getElementById('trip-form');
     const myTripsTableBody = document.querySelector('#my-trips tbody');
 
-    // Function to calculate the number of days between two dates
-    function calculateDays(arrivalDate, departureDate) {
-        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-        const arrival = new Date(arrivalDate);
-        const departure = new Date(departureDate);
-        return Math.round(Math.abs((arrival - departure) / oneDay));
+    // Function to fetch destinations from the server and populate the destinations list
+    function fetchDestinations() {
+        fetch('http://localhost:3000/destinations')
+            .then(response => response.json())
+            .then(destinations => {
+                destinations.forEach((destination, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'trip item';
+                    listItem.textContent = destination.name;
+                    listItem.dataset.id = destination.id;
+
+                    if (index === 0) {
+                        document.getElementById('poster').src = destination.photo;
+                        document.getElementById('description').textContent = destination.description;
+                        listItem.classList.add('selected');
+                    }
+
+                    listItem.addEventListener('click', () => {
+                        document.getElementById('poster').src = destination.photo;
+                        document.getElementById('description').textContent = destination.description;
+
+                        document.querySelectorAll('.trip.item').forEach(item => item.classList.remove('selected'));
+                        listItem.classList.add('selected');
+                    });
+
+                    destinationsList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching destinations:', error));
     }
 
-    // Function to calculate total cost based on accommodation type and number of days
-    function calculateTotal(accommodation, days) {
-        if (accommodation === 'single') {
-            return 10000 * days;
-        } else if (accommodation === 'double') {
-            return 13000 * days;
-        } else {
-            return 0; // If accommodation type is invalid, return 0
-        }
+    // Function to fetch trips from the server and populate my trips table
+    function fetchTrips() {
+        fetch('http://localhost:3000/trips')
+            .then(response => response.json())
+            .then(trips => populateTripsTable(trips))
+            .catch(error => console.error('Error fetching trips:', error));
     }
 
-    // Function to populate the table with captured trip data
     function populateTripsTable(trips) {
         myTripsTableBody.innerHTML = '';
         trips.forEach(trip => {
-            const days = calculateDays(trip.arrivalDate, trip.departureDate);
-            const total = calculateTotal(trip.accommodation, days);
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${trip.destination}</td>
                 <td>${trip.arrivalDate}</td>
                 <td>${trip.departureDate}</td>
-                <td>${days}</td>
+                <td>${trip.days}</td>
                 <td>${trip.accommodation}</td>
-                <td>${total}</td>
+                <td>${trip.total}</td>
             `;
             myTripsTableBody.appendChild(row);
         });
     }
 
-    // Function to handle form submission
     tripForm.addEventListener('submit', e => {
-        e.preventDefault(); // Prevent default form submission
+        // Prevent default form submission
+        e.preventDefault(); 
 
-        // Extract form data
         const formData = new FormData(tripForm);
-        const destinationTitle = formData.get('destination-title');
         const arrivalDate = formData.get('arrival-date');
         const departureDate = formData.get('departure-date');
         const accommodation = formData.get('accommodation');
 
-        // Calculate the number of days
-        const days = calculateDays(arrivalDate, departureDate);
+        const oneDay = 24 * 60 * 60 * 1000;
+        const days = Math.round(Math.abs((new Date(arrivalDate) - new Date(departureDate)) / oneDay));
 
-        // Calculate the total cost based on accommodation type and number of days
-        const total = calculateTotal(accommodation, days);
-
-        // Create trip object with form data
         const trip = {
-            destination: destinationTitle,
+            destination: destinationsList.querySelector('.selected').textContent,
             arrivalDate,
             departureDate,
             accommodation,
-            total,
+            days,
+            total: accommodation === 'single' ? days * 10000 : days * 13000,
         };
 
-        // Add trip to the table
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${trip.destination}</td>
-            <td>${trip.arrivalDate}</td>
-            <td>${trip.departureDate}</td>
-            <td>${days}</td>
-            <td>${trip.accommodation}</td>
-            <td>${trip.total}</td>
-        `;
-        myTripsTableBody.appendChild(row);
+        fetch('http://localhost:3000/trips', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(trip),
+        })
+        .then(response => response.json())
+        .then(() => {
+            fetchTrips();
+        })
+        .catch(error => console.error('Error adding trip:', error));
 
-        // Reset the form after submission
         tripForm.reset();
     });
 
-    // Initial function call to populate the table with existing trip data (if any)
-    const sampleTripData = [
-        {
-            destination: 'Paris',
-            arrivalDate: '2024-05-10',
-            departureDate: '2024-05-15',
-            accommodation: 'double',
-            total: 12000,
-        }
-    ];
-    populateTripsTable(sampleTripData);
+    fetchDestinations();
+    fetchTrips();
 });
