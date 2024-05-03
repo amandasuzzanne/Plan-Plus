@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Extract form data
         const formData = new FormData(tripForm);
+        const destinationTitle = formData.get('destination-title');
         const arrivalDate = formData.get('arrival-date');
         const departureDate = formData.get('departure-date');
         const accommodation = formData.get('accommodation');
@@ -56,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Calculate the total cost based on accommodation type and number of days
         const total = calculateTotal(accommodation, days);
 
-        // You can now handle this data as needed, such as saving it to the database and updating the table
+        // Create trip object with form data
         const trip = {
-            destination: 'Paris', // Assuming fixed destination for now
+            destination: destinationTitle,
             arrivalDate,
             departureDate,
             accommodation,
