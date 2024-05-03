@@ -5,57 +5,49 @@
     <title>Plan Plus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
     <link rel="stylesheet" href="assets/styles.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <!-- navbar -->
     <div class="heading">
         <div class="item">
             <h2 class="ui header">
-                <div class="content">Plan plus</div>
+                <div class="content">Plan Plus</div>
             </h2>
         </div>
     </div>
 
     <div class="ui centered grid">
+        <!-- Destinations list -->
         <div class="four wide column">
             <div class="list-container">
-                <!-- side menu -->
                 <ul class="ui divided list" id="destinations">
-                    <li class="trip item">Destination titles will go here.</li>
+                    <!-- Destinations will be dynamically added here -->
                 </ul>
             </div>
         </div>
 
-        <!-- poster -->
+        <!-- Poster and Description -->
         <div class="four wide column">
-            <div class="content">
-                <img id="poster" src="" alt="photo of destination"/>
-                <div id="description">[DESCRIPTION]</div>
-            </div>
+            <img id="poster" src="" alt="Photo of destination"/>
+            <div class="content" id="description">[DESCRIPTION]</div>
         </div>
 
-        <!-- destination being visited info -->
+        <!-- Trip Form -->
         <div class="four wide column">
             <div class="ui cards" id="destination">
                 <div class="card">
                     <div class="content">
                         <form id="trip-form">
                             <div class="field">
-                                <label for="destination-title">Destination Title</label>
-                                <input type="text" id="destination-title" name="destination-title">
-                            </div>
-                            <div class="field">
                                 <label for="arrival-date">Arrival Date</label>
-                                <input type="date" id="arrival-date" name="arrival-date">
+                                <input type="date" id="arrival-date" name="arrival-date" required>
                             </div>
                             <div class="field">
                                 <label for="departure-date">Departure Date</label>
-                                <input type="date" id="departure-date" name="departure-date">
+                                <input type="date" id="departure-date" name="departure-date" required>
                             </div>
                             <div class="field">
                                 <label for="accommodation">Accommodation</label>
-                                <select id="accommodation" name="accommodation">
+                                <select id="accommodation" name="accommodation" required>
                                     <option value="single">Single</option>
                                     <option value="double">Double</option>
                                 </select>
@@ -68,7 +60,7 @@
         </div>
     </div>
 
-    <!-- Display table for captured trip data -->
+    <!-- My Trips Table -->
     <div class="ui container">
         <h2>My Trips</h2>
         <table class="ui celled table" id="my-trips">
@@ -83,7 +75,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Populated dynamically using JavaScript -->
+                <!-- Trips will be dynamically added here -->
             </tbody>
         </table>
     </div>
