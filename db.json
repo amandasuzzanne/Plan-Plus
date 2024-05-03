@@ -1,15 +1,17 @@
 {
-  "trips": [
+  "destinations": [
     {
       "id": "1",
-      "destination": "Paris",
-      "arrivalDate": "2024-05-10",
-      "departureDate": "2024-05-15",
-      "days": 4,
-      "accommodation": "double",
-      "total": 52000,
-      "poster": "./assets/images/paris.jpeg",
-      "description": "A beautiful hotel in Paris."
+      "name": "Paris",
+      "photo": "./assets/images/paris.jpeg",
+      "description": "Paris is the capital city of France..."
+    },
+    {
+      "id": "2",
+      "name": "Tokyo",
+      "photo": "./assets/images/paris.jpeg",
+      "description": "Tokyo is the capital city of Japan..."
     }
-  ]
+  ],
+  "trips": []
 }
