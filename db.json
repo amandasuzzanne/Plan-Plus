@@ -5,9 +5,9 @@
       "destination": "Paris",
       "arrivalDate": "2024-05-10",
       "departureDate": "2024-05-15",
-      "days": 5,
+      "days": 4,
       "accommodation": "double",
-      "total": 65000,
+      "total": 52000,
       "poster": "./assets/images/paris.jpeg",
       "description": "A beautiful hotel in Paris."
     }
