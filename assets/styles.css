@@ -1,5 +1,14 @@
 body {
     background-color: #ebebeb;
+
+}
+.cocontainer{
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    margin-left:9%;
+    margin-right: 9%;
+    text-align: center;
 }
 
 .heading {
@@ -46,7 +55,7 @@ body {
     color: lightgray;
 }
 
-img {
+.img {
     max-width: 25vw;
     max-height: 200px;
 }

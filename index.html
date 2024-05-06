@@ -1,86 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Plan Plus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
     <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-    <div class="heading">
-        <div class="item">
-            <h2 class="ui header">
-                <div class="content">Plan Plus</div>
-            </h2>
-        </div>
-    </div>
 
-    <div class="ui centered grid">
-        <!-- Destinations list -->
-        <div class="four wide column">
-            <div class="list-container">
-                <ul class="ui divided list" id="destinations">
-                    <!-- Destinations will be dynamically added here -->
-                </ul>
+<body>
+    <div calss="container">
+        <div class="heading">
+            <div class="item">
+                <h2 class="ui header">
+                    <div class="content">Plan Plus</div>
+                </h2>
             </div>
         </div>
 
-        <!-- Poster and Description -->
-        <div class="four wide column">
-            <img id="poster" src="" alt="Photo of destination"/>
-            <div class="content" id="description">[DESCRIPTION]</div>
-        </div>
+        <div class="ui centered grid">
+            <!-- Destinations list -->
+            <div class="four wide column">
+                <div class="list-container">
+                    <ul class="ui divided list" id="destinations">
+                        <!-- Destinations will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
 
-        <!-- Trip Form -->
-        <div class="four wide column">
-            <div class="ui cards" id="destination">
-                <div class="card">
-                    <div class="content">
-                        <form id="trip-form">
-                            <div class="field">
-                                <label for="arrival-date">Arrival Date</label>
-                                <input type="date" id="arrival-date" name="arrival-date" required>
-                            </div>
-                            <div class="field">
-                                <label for="departure-date">Departure Date</label>
-                                <input type="date" id="departure-date" name="departure-date" required>
-                            </div>
-                            <div class="field">
-                                <label for="accommodation">Accommodation</label>
-                                <select id="accommodation" name="accommodation" required>
-                                    <option value="single">Single</option>
-                                    <option value="double">Double</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="ui blue button">Add Trip</button>
-                        </form>
+            <!-- Poster and Description -->
+            <div class="four wide column">
+                <img id="poster" src="" alt="Photo of destination" />
+                <div class="content" id="description">[DESCRIPTION]</div>
+            </div>
+
+            <!-- Trip Form -->
+            <div class="four wide column">
+                <div class="ui cards" id="destination">
+                    <div class="card">
+                        <div class="content">
+                            <form id="trip-form">
+                                <div class="field">
+                                    <label for="arrival-date">Arrival Date</label>
+                                    <input type="date" id="arrival-date" name="arrival-date" required>
+                                </div>
+                                <div class="field">
+                                    <label for="departure-date">Departure Date</label>
+                                    <input type="date" id="departure-date" name="departure-date" required>
+                                </div>
+                                <div class="field">
+                                    <label for="accommodation">Accommodation</label>
+                                    <select id="accommodation" name="accommodation" required>
+                                        <option value="single">Single</option>
+                                        <option value="double">Double</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="ui blue button">Add Trip</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- My Trips Table -->
-    <div class="ui container">
-        <h2>My Trips</h2>
-        <table class="ui celled table" id="my-trips">
-            <thead>
-                <tr>
-                    <th>Destination</th>
-                    <th>Arrival Date</th>
-                    <th>Departure Date</th>
-                    <th>Days</th>
-                    <th>Accommodation</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Trips will be dynamically added here -->
-            </tbody>
-        </table>
-    </div>
+        <!-- My Trips Table -->
+        <div class="ui container">
+            <h2>My Trips</h2>
+            <table class="ui celled table" id="my-trips">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Arrival Date</th>
+                        <th>Departure Date</th>
+                        <th>Days</th>
+                        <th>Accommodation</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Trips will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
 
-    <script src="assets/script.js"></script>
+        <script src="assets/script.js"></script>
+    </div>
 </body>
+
 </html>
