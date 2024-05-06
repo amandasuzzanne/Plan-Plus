@@ -17,6 +17,18 @@
       "name": "Southern Palms Beach",
       "photo": "./assets/images/assets/images/southern-palms-beach.jpeg",
       "description": "This dramatic hotel with its fantastic pools and beautiful beach is the perfect spot to relax after a safari… or simply visit to relax! The warm and very African feel of the hotel with comfortable rooms, well appointed bathrooms and selection of restaurants offers guests plenty of places to lounge in the sun and almost as many shady spots to enjoy a bit of a breeze and a good book. All rooms have quiet, split unit air conditioners, televisions, mini fridges and coffee and tea making facilities. There is a safe (chargeable) in each room and a business center located in the main building with internet or wifi access in public areas. The drama of the huge, traditional makuti (thatched) roof in the main restaurant offers the Chef a terrific showcase for a varied selection of local and international dishes on the buffet or you could indulge at one of the a la carte restaurants (chargeable) for a special occasion or just a quiet evening for two."
+    },
+    {
+      "id": "4",
+      "name": "Diamonds Leisure Beach & Golf Resort",
+      "photo": "assets/images/diamonds-leisure-beach-and-golf-resort.jpg",
+      "description": "Welcome to Diamonds Leisure Beach & Golf Resort, situated on the powder white sands of the award-winning Diani Beach some 38kms south of Mombasa. Our attentive team will make your stay most memorable and unforgettable. The resort has stunning tropical gardens and over 450 meters of beach frontage. We have a choice of bars & restaurants which are open throughout the day. Our in-house animation team for adults and kids will keep you busy with various activities from Aqua-aerobics to Snake Park Visits and much more. The hotel has a stunning 18-hole Championship Golf Course, with a Golf Pro who is available to give private or group lessons, as well as a purpose, built Conference Centre. Shopping facilities, bars, restaurants, discos, and banks with ATM's are all within walking distance or a short taxi ride away."
+    },
+    {
+      "id": "5",
+      "name": "Villa Luxury Suites Hotel",
+      "photo": ".assets/images/the-villa-luxury-suites-hotel.jpeg",
+      "description": "The Villa Luxury Suites Hotel, is located just adjacent of Diani beach Road, in Kenya, offers you the perfect combination of luxury and comfort Home away from Home. The Villa is the ideal getaway for a family or group of friends looking to relax, soak up the African sun diner without the limitation of a hotel."
     }
   ],
   "trips": []
