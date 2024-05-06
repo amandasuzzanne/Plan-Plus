@@ -3,13 +3,13 @@
     {
       "id": "1",
       "name": "Diani Reef Resort",
-      "photo": "./assets/images/diani-reef-resort.jpg",
+      "photo": "./assets/images/diani-reef-beach-resort.jpeg",
       "description": "Located by the world renowned Diani beach over a sprawling and serene area of 34 acres, it is truly a paradise waiting for you with a magical experience. Offering world class hospitality standards, this beach resort is the perfect destination for beach holidays, corporate and social events and grand weddings. With multi-cuisine dining outlets, bars, well-appointed rooms and suites, swimming pool and spa, it promises nothing but the ultimate holiday experience. It will be one decision that you will never regret!"
     },
     {
       "id": "2",
       "name": "Searenity Beach Villa",
-      "photo": "./assets/images/searenity-beach-villa.jpg",
+      "photo": "./assets/images/assets/images/searenity-beach-villa.jpeg",
       "description": "Our rooms are spacious, the views are unparalleled and the service is personalised. An airy and bright refuge where guests can rediscover the pace of life that accompanies long, drawn-out days and easy, dreamy evenings. This beach front sanctuary is perfect for those wanting to escape the bustle of the mundane."
     }
   ],
