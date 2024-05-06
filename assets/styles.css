@@ -1,5 +1,6 @@
 body {
-    background-color: #ebebeb;
+    background: rgb(228,228,236);
+    background: linear-gradient(90deg, rgba(228,228,236,1) 0%, rgba(186,186,186,1) 35%, rgba(179,190,193,1) 100%);
 
 }
 .container{
@@ -55,7 +56,7 @@ body {
     color: lightgray;
 }
 
-.img {
+img {
     max-width: 25vw;
     max-height: 200px;
 }
