@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchTrips() {
         fetch('http://localhost:3000/trips')
             .then(response => response.json())
-            .then(trips => populateTripsTable(trips))
+            .then(trips => {
+                tripsData = trips;
+                populateTripsTable(trips);
+            })
             .catch(error => console.error('Error fetching trips:', error));
     }
 
@@ -53,14 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${trip.days}</td>
                 <td>${trip.accommodation}</td>
                 <td>${trip.total}</td>
+                <td>
+                    <button class="ui red button delete-btn" data-id="${trip.id}">Delete</button>
+                </td>
             `;
             myTripsTableBody.appendChild(row);
         });
+
+        // Add event listeners for delete and update buttons
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', deleteTrip);
+        });
+
+    }
+
+    function deleteTrip(event) {
+        const tripId = event.target.dataset.id;
+        fetch(`http://localhost:3000/trips/${tripId}`, {
+            method: 'DELETE',
+        })
+        .then(() => {
+            fetchTrips();
+        })
+        .catch(error => console.error('Error deleting trip:', error));
     }
 
     tripForm.addEventListener('submit', e => {
         // Prevent default form submission
-        e.preventDefault(); 
+        e.preventDefault();
 
         const formData = new FormData(tripForm);
         const arrivalDate = formData.get('arrival-date');
