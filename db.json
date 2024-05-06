@@ -11,6 +11,12 @@
       "name": "Searenity Beach Villa",
       "photo": "./assets/images/assets/images/searenity-beach-villa.jpeg",
       "description": "Our rooms are spacious, the views are unparalleled and the service is personalised. An airy and bright refuge where guests can rediscover the pace of life that accompanies long, drawn-out days and easy, dreamy evenings. This beach front sanctuary is perfect for those wanting to escape the bustle of the mundane."
+    },
+    {
+      "id": "3",
+      "name": "Southern Palms Beach",
+      "photo": "./assets/images/assets/images/southern-palms-beach.jpeg",
+      "description": "This dramatic hotel with its fantastic pools and beautiful beach is the perfect spot to relax after a safari… or simply visit to relax! The warm and very African feel of the hotel with comfortable rooms, well appointed bathrooms and selection of restaurants offers guests plenty of places to lounge in the sun and almost as many shady spots to enjoy a bit of a breeze and a good book. All rooms have quiet, split unit air conditioners, televisions, mini fridges and coffee and tea making facilities. There is a safe (chargeable) in each room and a business center located in the main building with internet or wifi access in public areas. The drama of the huge, traditional makuti (thatched) roof in the main restaurant offers the Chef a terrific showcase for a varied selection of local and international dishes on the buffet or you could indulge at one of the a la carte restaurants (chargeable) for a special occasion or just a quiet evening for two."
     }
   ],
   "trips": []
